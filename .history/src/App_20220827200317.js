@@ -7,7 +7,7 @@ function App() {
   return (
     <div className={styles['App']}>
       <div className={styles['left-nav']}>
-        <FaSearch className='mb-4 mt-4' />
+        <FaSearch className='mb-4 ' />
         <FaBolt className='mb-4'/>
         <FaCalendarAlt className='mb-4'/>
         <FaUndo className='mb-4'/>

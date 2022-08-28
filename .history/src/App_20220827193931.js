@@ -1,18 +1,17 @@
-import logo from './logo.svg';
+import logo from './logo.svg';.css';
 import { FaEllipsisV, FaSearch, FaBolt, FaCalendarAlt, FaUndo } from "react-icons/fa";
 import styles from '../src/styles/App.module.css'
-import '../src/styles/Global.module.css'
 
 function App() {
   return (
-    <div className={styles['App']}>
-      <div className={styles['left-nav']}>
-        <FaSearch className='mb-4 mt-4' />
-        <FaBolt className='mb-4'/>
-        <FaCalendarAlt className='mb-4'/>
-        <FaUndo className='mb-4'/>
+    <div className="App">
+      <div>
+        <FaSearch />
+        <FaBolt />
+        <FaCalendarAlt />
+        <FaUndo />
       </div>
-      <div className={styles['right-content']}>
+      <div>
         <header className={styles['header']}>
           <div>
             <span className={styles['title']}>Mount Sinai</span>
