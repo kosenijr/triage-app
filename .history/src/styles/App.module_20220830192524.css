@@ -28,10 +28,6 @@
   font-weight: 300;
 }
 
-.patient-card {
-  max-width: 400px;
-}
-
 @media screen and (min-width: 700px) {
   .sub-title {
     display: initial;
@@ -39,17 +35,13 @@
   }
 }
 
-@media screen and (min-width: 768px) {
-  .processing {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .process-columns {
-    width: 30%;
-
+@media screen and (min-width: 7px) {
+  .sub-title {
+    display: initial;
+    padding-left: 1rem;
   }
 }
+
 
 @media screen and (min-width: 800px) {
   .App {
@@ -62,6 +54,7 @@
     flex-direction: column;
     width: 5%;
     align-items: center;
+    
   }
 
   .right-content {

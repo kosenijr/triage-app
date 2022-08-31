@@ -9,8 +9,8 @@ import '../src/styles/Global.module.css'
 function App() {
 
   const [triage, setTriage] = useState([{ name: 'John Smith', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis perferendis, non quos veritatis adipisci ut! At ducimus iste quos!' }]);
-  const [treating, setTreating] = useState([{ name: 'Jimmy Tudeski', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis perferendis, non quos veritatis adipisci ut! At ducimus iste quos!' }]);
-  const [discharging, setDischarging] = useState([{ name: 'Paul Bunyan', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis perferendis, non quos veritatis adipisci ut! At ducimus iste quos!' }]);
+  const [treating, setTreating] = useState([{ name: 'Jimmy Tude', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis perferendis, non quos veritatis adipisci ut! At ducimus iste quos!' }]);
+  const [discharging, setDischarging] = useState([{ name: 'John Smith', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis perferendis, non quos veritatis adipisci ut! At ducimus iste quos!' }]);
 
 
   return (

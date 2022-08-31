@@ -9,8 +9,8 @@ import '../src/styles/Global.module.css'
 function App() {
 
   const [triage, setTriage] = useState([{ name: 'John Smith', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis perferendis, non quos veritatis adipisci ut! At ducimus iste quos!' }]);
-  const [treating, setTreating] = useState([{ name: 'Jimmy Tudeski', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis perferendis, non quos veritatis adipisci ut! At ducimus iste quos!' }]);
-  const [discharging, setDischarging] = useState([{ name: 'Paul Bunyan', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis perferendis, non quos veritatis adipisci ut! At ducimus iste quos!' }]);
+  const [treating, setTreating] = useState([{ name: 'John Smith', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis perferendis, non quos veritatis adipisci ut! At ducimus iste quos!' }]);
+  const [discharging, setDischarging] = useState([{ name: 'John Smith', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt officiis perferendis, non quos veritatis adipisci ut! At ducimus iste quos!' }]);
 
 
   return (
@@ -47,25 +47,13 @@ function App() {
           </div>
           <div className={styles['process-columns']}>
             <h2>Treating</h2>
-            {treating.map((elem, index) => {
-              return (
-                <div key={index} className={styles['patient-card']}>
-                  <h3>{elem.name}</h3>
-                  <p>{elem.description}</p>
-                </div>
-              )
+            {treating.            {treating.
             })}
 
           </div>
           <div className={styles['process-columns']}>
             <h2>Discharging</h2>
-            {discharging.map((elem, index) => {
-              return (
-                <div key={index} className={styles['patient-card']}>
-                  <h3>{elem.name}</h3>
-                  <p>{elem.description}</p>
-                </div>
-              )
+            {discharging.            {discharging.
             })}
 
           </div>
