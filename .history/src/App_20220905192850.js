@@ -44,11 +44,14 @@ function App() {
         <div className={styles['processing']}>
           <div className={styles['process-columns']}>
             <h2>Triage</h2>
-            {patientRecords.map((patient, index) => {
-              log(patient)
-              if (patient.stage === 'triage') {
+            {patientRecords.map((, index) => {
+              log()
+              if (.stage === 'triage') {
                 return (
-                  <PatientCard key={index} patient={patient} />
+                  <div key={index} className={styles['patient-card']}>
+                    <h3>{.name}</h3>
+                    <p>{.description}</p>
+                  </div>
                 )
               }
 
@@ -56,11 +59,14 @@ function App() {
           </div>
           <div className={styles['process-columns']}>
             <h2>Treating</h2>
-            {patientRecords.map((patient, index) => {
+            {patientRecords.map((, index) => {
 
-              if (patient.stage === 'treating') {
+              if (.stage === 'treating') {
                 return (
-                  <PatientCard key={index} />
+                  <div key={index} className={styles['patient-card']}>
+                    <h3>{.name}</h3>
+                    <p>{.description}</p>
+                  </div>
                 )
               }
 
@@ -69,11 +75,14 @@ function App() {
           </div>
           <div className={styles['process-columns']}>
             <h2>Discharging</h2>
-            {patientRecords.map((patient, index) => {
+            {patientRecords.map((, index) => {
 
-              if (patient.stage === 'discharging') {
+              if (.stage === 'discharging') {
                 return (
-                  <PatientCard key={index} />
+                  <div key={index} className={styles['patient-card']}>
+                    <h3>{.name}</h3>
+                    <p>{.description}</p>
+                  </div>
                 )
               }
 

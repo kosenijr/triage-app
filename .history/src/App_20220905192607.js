@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaEllipsisV, FaSearch, FaBolt, FaCalendarAlt, FaUndo } from "react-icons/fa";
 import styles from '../src/styles/App.module.css'
-import PatientCard from './components/PatientCard'
+import PatientCard from '../src/components'
 import '../src/styles/Global.module.css'
 import { ROUTES } from '../src/constants'
 
@@ -44,11 +44,14 @@ function App() {
         <div className={styles['processing']}>
           <div className={styles['process-columns']}>
             <h2>Triage</h2>
-            {patientRecords.map((patient, index) => {
-              log(patient)
-              if (patient.stage === 'triage') {
+            {patientRecords.map((elem, index) => {
+              log(elem)
+              if (elem.stage === 'triage') {
                 return (
-                  <PatientCard key={index} patient={patient} />
+                  <div key={index} className={styles['patient-card']}>
+                    <h3>{elem.name}</h3>
+                    <p>{elem.description}</p>
+                  </div>
                 )
               }
 
@@ -56,11 +59,14 @@ function App() {
           </div>
           <div className={styles['process-columns']}>
             <h2>Treating</h2>
-            {patientRecords.map((patient, index) => {
+            {patientRecords.map((elem, index) => {
 
-              if (patient.stage === 'treating') {
+              if (elem.stage === 'treating') {
                 return (
-                  <PatientCard key={index} />
+                  <div key={index} className={styles['patient-card']}>
+                    <h3>{elem.name}</h3>
+                    <p>{elem.description}</p>
+                  </div>
                 )
               }
 
@@ -69,11 +75,14 @@ function App() {
           </div>
           <div className={styles['process-columns']}>
             <h2>Discharging</h2>
-            {patientRecords.map((patient, index) => {
+            {patientRecords.map((elem, index) => {
 
-              if (patient.stage === 'discharging') {
+              if (elem.stage === 'discharging') {
                 return (
-                  <PatientCard key={index} />
+                  <div key={index} className={styles['patient-card']}>
+                    <h3>{elem.name}</h3>
+                    <p>{elem.description}</p>
+                  </div>
                 )
               }
 

@@ -48,7 +48,7 @@ function App() {
               log(patient)
               if (patient.stage === 'triage') {
                 return (
-                  <PatientCard key={index} patient={patient} />
+                  <PatientCard key={index} patient={PatientCard} />
                 )
               }
 

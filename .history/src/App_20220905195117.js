@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaEllipsisV, FaSearch, FaBolt, FaCalendarAlt, FaUndo } from "react-icons/fa";
 import styles from '../src/styles/App.module.css'
-import PatientCard from './components/PatientCard'
+import PatientCard from '../components/PatientCard'
 import '../src/styles/Global.module.css'
 import { ROUTES } from '../src/constants'
 
@@ -48,7 +48,7 @@ function App() {
               log(patient)
               if (patient.stage === 'triage') {
                 return (
-                  <PatientCard key={index} patient={patient} />
+                  <PatientCard key={index} />
                 )
               }
 

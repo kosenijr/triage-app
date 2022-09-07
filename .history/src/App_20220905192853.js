@@ -48,7 +48,10 @@ function App() {
               log(patient)
               if (patient.stage === 'triage') {
                 return (
-                  <PatientCard key={index} patient={patient} />
+                  <div key={index} className={styles['patient-card']}>
+                    <h3>{patient.name}</h3>
+                    <p>{patient.description}</p>
+                  </div>
                 )
               }
 
@@ -60,7 +63,10 @@ function App() {
 
               if (patient.stage === 'treating') {
                 return (
-                  <PatientCard key={index} />
+                  <div key={index} className={styles['patient-card']}>
+                    <h3>{patient.name}</h3>
+                    <p>{patient.description}</p>
+                  </div>
                 )
               }
 
@@ -73,7 +79,10 @@ function App() {
 
               if (patient.stage === 'discharging') {
                 return (
-                  <PatientCard key={index} />
+                  <div key={index} className={styles['patient-card']}>
+                    <h3>{patient.name}</h3>
+                    <p>{patient.description}</p>
+                  </div>
                 )
               }
 
