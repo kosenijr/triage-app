@@ -34,18 +34,18 @@ function App() {
     setPatientRecords(patientRecords.map((record) => {
       if (record.id === patient.id) {
         record.room = room;
-        record.stage = 'treating';
       }
       return record;
     }));
 
     const requestOptions = {
       method: 'PUT',
-      body: newPatientRecord,
+      body: ,
       redirect: 'follow'
     };
 
     fetch("https://cw4ccp3r5d.execute-api.us-east-2.amazonaws.com/Prod/patient/", requestOptions)
+      .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
   }

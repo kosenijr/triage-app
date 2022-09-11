@@ -19,36 +19,29 @@ function App() {
       .then(res => setPatientRecords(res))
   }, [])
 
-  const onRoomAssignment = (patient, room) => {
+  const roomAssignment = ({patient}) => {
     const oldPatientRecord = patient;
     const newPatientRecord = {
-      id: patient.id,
-      name: patient.name,
-      dob: patient.dob,
-      complaint: patient.complaint,
-      priority: patient.priority,
-      room: patient.room,
-      stage: patient.stage
+        id: patient.id,
+        name: patient.name,
+        dob: patient.dob,
+        complaint: patient.complaint,
+        priority: patient.priority,
+        room: patient.room,
+        stage: patient.stage
     }
 
-    setPatientRecords(patientRecords.map((record) => {
-      if (record.id === patient.id) {
-        record.room = room;
-        record.stage = 'treating';
-      }
-      return record;
-    }));
-
     const requestOptions = {
-      method: 'PUT',
-      body: newPatientRecord,
-      redirect: 'follow'
+        method: 'PUT',
+        body: newPatientRecord,
+        redirect: 'follow'
     };
 
     fetch("https://cw4ccp3r5d.execute-api.us-east-2.amazonaws.com/Prod/patient/", requestOptions)
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
-  }
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+}
 
   return (
     <div className={styles['App']}>
@@ -77,7 +70,7 @@ function App() {
               log(patient)
               if (patient.stage === 'triage') {
                 return (
-                  <PatientCard key={index} patient={patient} updateRoomAssignment={onRoomAssignment} />
+                  <PatientCard key={index} patient={patient} setPatientRecords={setPatientRecords} />
                 )
               }
 
@@ -89,7 +82,7 @@ function App() {
 
               if (patient.stage === 'treating') {
                 return (
-                  <PatientCard key={index} patient={patient} updateRoomAssignment={onRoomAssignment} />
+                  <PatientCard key={index} patient={patient} setPatientRecords={setPatientRecords} />
                 )
               }
 
@@ -102,7 +95,7 @@ function App() {
 
               if (patient.stage === 'discharging') {
                 return (
-                  <PatientCard key={index} patient={patient} updateRoomAssignment={onRoomAssignment} />
+                  <PatientCard key={index} patient={patient} setPatientRecords={setPatientRecords} />
                 )
               }
 

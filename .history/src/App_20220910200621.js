@@ -33,8 +33,7 @@ function App() {
 
     setPatientRecords(patientRecords.map((record) => {
       if (record.id === patient.id) {
-        record.room = room;
-        record.stage = 'treating';
+        record.stage = room;
       }
       return record;
     }));

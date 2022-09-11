@@ -17,7 +17,7 @@ function App() {
     fetch(ROUTES['GET_ALL_PATIENTS'])
       .then(res => res.json())
       .then(res => setPatientRecords(res))
-  }, [])
+  }, [patientRecords])
 
   const onRoomAssignment = (patient, room) => {
     const oldPatientRecord = patient;
@@ -34,7 +34,6 @@ function App() {
     setPatientRecords(patientRecords.map((record) => {
       if (record.id === patient.id) {
         record.room = room;
-        record.stage = 'treating';
       }
       return record;
     }));

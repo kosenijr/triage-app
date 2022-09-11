@@ -12,7 +12,7 @@ const PatientCard = ({ patient, updateRoomAssignment }) => {
             {patient?.stage === 'triage' &&
                 <div>
                     <label for="assign-room">Assign to room:</label>
-                    <select name="rooms" id="assign-room" onChange={(event) => updateRoomAssignment(patient, event.target.value)}>
+                    <select name="rooms" id="assign-room" onChange={(event) => updateRoomAssignment(patient, event.target.value =)}>
                         <option value="">--Please choose an option--</option>
                         <option value="Room 101">Room 101</option>
                         <option value="Room 102">Room 102</option>

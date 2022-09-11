@@ -19,7 +19,7 @@ function App() {
       .then(res => setPatientRecords(res))
   }, [])
 
-  const onRoomAssignment = (patient, room) => {
+  const onRoomAssignment = (patient) => {
     const oldPatientRecord = patient;
     const newPatientRecord = {
       id: patient.id,
@@ -32,12 +32,12 @@ function App() {
     }
 
     setPatientRecords(patientRecords.map((record) => {
-      if (record.id === patient.id) {
-        record.room = room;
-        record.stage = 'treating';
-      }
-      return record;
-    }));
+      if (patient.id === id) {
+      patient.completed ? patient.completed = 0 : patient.completed = 1;
+  }
+  return todo;
+}));
+))
 
     const requestOptions = {
       method: 'PUT',
@@ -46,6 +46,7 @@ function App() {
     };
 
     fetch("https://cw4ccp3r5d.execute-api.us-east-2.amazonaws.com/Prod/patient/", requestOptions)
+      .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
   }

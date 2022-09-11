@@ -34,7 +34,6 @@ function App() {
     setPatientRecords(patientRecords.map((record) => {
       if (record.id === patient.id) {
         record.room = room;
-        record.stage = 'treating';
       }
       return record;
     }));
@@ -50,6 +49,8 @@ function App() {
       .catch(error => console.log('error', error));
   }
 
+
+  
   return (
     <div className={styles['App']}>
       <div className={styles['left-nav']}>
