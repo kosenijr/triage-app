@@ -51,7 +51,7 @@ function App() {
     };
 
     fetch(ROUTES['GET_EACH_PATIENT'], requestOptions)
-      .then(result => result.json())
+      .then(result => console.log(result))
       .catch(error => console.log('error', error));
   }
 
@@ -109,7 +109,7 @@ function App() {
       method: 'DELETE',
     };
 
-    fetch(`${ROUTES['GET_EACH_PATIENT']}/${patient.id}`, requestOptions)
+    fetch(ROUTES['GET_EACH_PATIENT']`${}`, requestOptions)
       .then(result => result.json())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));

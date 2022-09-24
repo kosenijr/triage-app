@@ -14,7 +14,7 @@ const PatientCard = ({ patient, onStartDischarge, onCompleteDischarge, updateRoo
 
             {patient?.stage === 'triage' &&
                 <div>
-                    <label htmlFor="assign-room">Assign to room:</label>
+                    <label for="assign-room">Assign to room:</label>
                     <select name="rooms" id="assign-room" onChange={(e) => updateRoomAssignment(patient, e.target.value)}>
                         <option value="">--Please choose an option--</option>
                         <option value="treating-room">Treating Room</option>
@@ -25,7 +25,7 @@ const PatientCard = ({ patient, onStartDischarge, onCompleteDischarge, updateRoo
             }
             {patient?.stage === 'treating' && <button onClick={() => onStartDischarge(patient)}>Start Discharge Process</button>}
 
-            {patient?.stage === 'discharging' && <button onClick={() => onCompleteDischarge(patient)}>Discharge Process Complete</button>}
+            {patient?.stage === 'discharging' && <button onClick={() => onCompleteDischarge}>Discharge Process Complete</button>}
 
 
         </div >

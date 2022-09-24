@@ -51,7 +51,7 @@ function App() {
     };
 
     fetch(ROUTES['GET_EACH_PATIENT'], requestOptions)
-      .then(result => result.json())
+
       .catch(error => console.log('error', error));
   }
 

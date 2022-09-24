@@ -51,23 +51,13 @@ function App() {
     };
 
     fetch(ROUTES['GET_EACH_PATIENT'], requestOptions)
-      .then(result => result.json())
+      .then(result => console.log(result))
       .catch(error => console.log('error', error));
   }
 
   const onCreatePatient = (patient) => {
-    const requestOptions = {
-      method: 'POST',
-      body: JSON.stringify(patient),
-    };
-
-    fetch(ROUTES['GET_EACH_PATIENT'], requestOptions)
-      .then(result => result.json())
-      .then(patient => console.log(patient))
-      .then(patient => setPatientRecords([...patientRecords, patient]))
-      .catch(error => console.log('error', error));
+    setPatientRecords([...patientRecords, patient])
   }
-
 
   const onStartDischarge = (patient) => {
     const newPatientRecord = {
@@ -89,33 +79,39 @@ function App() {
       return record;
     }));
 
-    const requestOptions = {
-      method: 'PUT',
-      body: JSON.stringify(newPatientRecord),
-    };
+    // const requestOptions = {
+    // method: 'PUT',
+    // body: JSON.stringify(newPatientRecord),
+    // };
 
-    fetch(ROUTES['GET_EACH_PATIENT'], requestOptions)
-      .then(result => result.json())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
+    // fetch(ROUTES['GET_EACH_PATIENT'], requestOptions)
+    // .then(result => console.log(result))
+    // .catch(error => console.log('error', error));
 
 
   }
 
-  const onCompleteDischarge = (patient) => {
-    setPatientRecords(patientRecords.filter((record) => record.id !== patient.id));
-
-    const requestOptions = {
-      method: 'DELETE',
-    };
-
-    fetch(`${ROUTES['GET_EACH_PATIENT']}/${patient.id}`, requestOptions)
-      .then(result => result.json())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
-
+  const onCompleteDischarge = (patient,) => {
+    const newPatientRecord = {
+      id: patient.id,
+      name: patient.name,
+      dob: patient.dob,
+      complaint: patient.complaint,
+      priority: patient.priority,
+      room: 'discharging-room',
+      stage: 'discharging'
+    }
 
 
+    setPatientRecords(patientRecords.map((record) => {
+      if (record.id === patient.id) {
+        record.room = '';
+        record.stage = `${record.name}: Discharged: ${Date()}`;
+        log(record.stage);
+        patientRecords.splice(patientRecords.indexOf(record), 1);
+      }
+      return record;
+    }));
 
 
   }

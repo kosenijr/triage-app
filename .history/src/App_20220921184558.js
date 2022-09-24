@@ -51,23 +51,13 @@ function App() {
     };
 
     fetch(ROUTES['GET_EACH_PATIENT'], requestOptions)
-      .then(result => result.json())
+      .then(result => console.log(result))
       .catch(error => console.log('error', error));
   }
 
   const onCreatePatient = (patient) => {
-    const requestOptions = {
-      method: 'POST',
-      body: JSON.stringify(patient),
-    };
-
-    fetch(ROUTES['GET_EACH_PATIENT'], requestOptions)
-      .then(result => result.json())
-      .then(patient => console.log(patient))
-      .then(patient => setPatientRecords([...patientRecords, patient]))
-      .catch(error => console.log('error', error));
+    setPatientRecords([...patientRecords, patient])
   }
-
 
   const onStartDischarge = (patient) => {
     const newPatientRecord = {
@@ -89,35 +79,20 @@ function App() {
       return record;
     }));
 
-    const requestOptions = {
-      method: 'PUT',
-      body: JSON.stringify(newPatientRecord),
-    };
+    // const requestOptions = {
+    // method: 'PUT',
+    // body: JSON.stringify(newPatientRecord),
+    // };
 
-    fetch(ROUTES['GET_EACH_PATIENT'], requestOptions)
-      .then(result => result.json())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
+    // fetch(ROUTES['GET_EACH_PATIENT'], requestOptions)
+    // .then(result => console.log(result))
+    // .catch(error => console.log('error', error));
 
 
   }
 
-  const onCompleteDischarge = (patient) => {
-    setPatientRecords(patientRecords.filter((record) => record.id !== patient.id));
-
-    const requestOptions = {
-      method: 'DELETE',
-    };
-
-    fetch(`${ROUTES['GET_EACH_PATIENT']}/${patient.id}`, requestOptions)
-      .then(result => result.json())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
-
-
-
-
-
+  const onCompleteDischarge = (patient, event) => {
+    setPatientRecords(patientRecords.map(record => log(record.id === patient.id, patient.name, patientRecords.indexOf(patient))))
   }
   return (
     <div className={styles['App']}>
@@ -145,7 +120,7 @@ function App() {
             <h2>Triage</h2>
             {patientRecords.map((patient, index) => {
               // log(patient)
-              if (patient?.stage === 'triage') {
+              if (patient.stage === 'triage') {
                 return (
                   <PatientCard key={index} patient={patient} updateRoomAssignment={onRoomAssignment} />
                 )
@@ -157,7 +132,7 @@ function App() {
             <h2>Treating</h2>
             {patientRecords.map((patient, index) => {
               // log(patient.name, patient.stage);
-              if (patient?.stage === 'treating') {
+              if (patient.stage === 'treating') {
                 return (
                   <PatientCard key={index} patient={patient} updateRoomAssignment={onRoomAssignment} onStartDischarge={onStartDischarge} />
                 )
@@ -170,7 +145,7 @@ function App() {
             <h2>Discharging</h2>
             {patientRecords.map((patient, index) => {
 
-              if (patient?.stage === 'discharging') {
+              if (patient.stage === 'discharging') {
                 return (
                   <PatientCard key={index} patient={patient} updateRoomAssignment={onRoomAssignment} onCompleteDischarge={onCompleteDischarge} />
                 )

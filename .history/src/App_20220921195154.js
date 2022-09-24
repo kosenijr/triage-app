@@ -51,7 +51,7 @@ function App() {
     };
 
     fetch(ROUTES['GET_EACH_PATIENT'], requestOptions)
-      .then(result => result.json())
+      .then(result => console.log(result))
       .catch(error => console.log('error', error));
   }
 
@@ -103,19 +103,17 @@ function App() {
   }
 
   const onCompleteDischarge = (patient) => {
+    const newPatientRecord = {
+      id: patient.id,
+      name: patient.name,
+      dob: patient.dob,
+      complaint: patient.complaint,
+      priority: patient.priority,
+      room: 'discharging-room',
+      stage: 'discharging'
+    }
+
     setPatientRecords(patientRecords.filter((record) => record.id !== patient.id));
-
-    const requestOptions = {
-      method: 'DELETE',
-    };
-
-    fetch(`${ROUTES['GET_EACH_PATIENT']}/${patient.id}`, requestOptions)
-      .then(result => result.json())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
-
-
-
 
 
   }
