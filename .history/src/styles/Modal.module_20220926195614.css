@@ -1,12 +1,9 @@
 .modal {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
   background-color: lightgray;
   padding: 2rem;
-  border-radius: 0.5rem;
+  
 }
 
 .modal form input {

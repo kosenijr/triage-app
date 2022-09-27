@@ -12,7 +12,7 @@ function App() {
 
   const [patientRecords, setPatientRecords] = useState([]);
   const [numOfPatients, setNumOfPatients] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
 
   useEffect(() => {
@@ -144,10 +144,7 @@ function App() {
 
         <div className={styles['processing']}>
           <div className={styles['process-columns']}>
-            <div>
-              <h2>Triage</h2>
-              <button onClick={() => setIsModalOpen(!isModalOpen)}>Create Patient</button>
-            </div>
+            <h2>Triage</h2>
             {patientRecords.map((patient, index) => {
               // log(patient)
               if (patient?.stage === 'triage') {

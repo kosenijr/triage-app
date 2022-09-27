@@ -145,8 +145,7 @@ function App() {
         <div className={styles['processing']}>
           <div className={styles['process-columns']}>
             <div>
-              <h2>Triage</h2>
-              <button onClick={() => setIsModalOpen(!isModalOpen)}>Create Patient</button>
+
             </div>
             {patientRecords.map((patient, index) => {
               // log(patient)

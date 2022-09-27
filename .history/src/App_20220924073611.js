@@ -14,7 +14,6 @@ function App() {
   const [numOfPatients, setNumOfPatients] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-
   useEffect(() => {
     fetch(ROUTES['GET_ALL_PATIENTS'])
       .then(res => res.json())
@@ -129,7 +128,6 @@ function App() {
         <FaUndo className='mb-4' />
       </div>
       <div className={styles['right-content']}>
-        {isModalOpen && <Modal onCreatePatient={onCreatePatient} />}
         <header className={styles['header']}>
           <div>
             <span className={styles['title']}>Mount Sinai</span>
@@ -141,13 +139,10 @@ function App() {
           </div>
         </header>
         <div><span>Number of Patients: </span><span>{numOfPatients}</span></div>
-
+        <Modal onCreatePatient={onCreatePatient} />
         <div className={styles['processing']}>
           <div className={styles['process-columns']}>
-            <div>
-              <h2>Triage</h2>
-              <button onClick={() => setIsModalOpen(!isModalOpen)}>Create Patient</button>
-            </div>
+            <h2>Triage</h2>
             {patientRecords.map((patient, index) => {
               // log(patient)
               if (patient?.stage === 'triage') {
