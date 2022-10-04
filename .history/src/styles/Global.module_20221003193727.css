@@ -6,6 +6,4 @@
   margin-top: 1rem;
 }
 
-:global(.font-bold) {
-  font-weight: 700;
-}
+:global(.font-bold)

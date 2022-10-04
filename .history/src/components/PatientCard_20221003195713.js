@@ -9,6 +9,7 @@ const PatientCard = ({ patient, onStartDischarge, onCompleteDischarge, updateRoo
         const newPatientRecord = {
             ...patient,
             priority: newPriority
+
         }
         const requestOptions = {
             method: 'PUT',

@@ -1,25 +1,10 @@
 import React, { useState } from 'react'
 import styles from '../styles/PatientCard.module.css'
-import { ROUTES } from '../constants'
 
 const PatientCard = ({ patient, onStartDischarge, onCompleteDischarge, updateRoomAssignment }) => {
     const [priority, setPriority] = useState(patient.priority);
     const onPriorityChange = (newPriority) => {
         setPriority(newPriority);
-        const newPatientRecord = {
-            ...patient,
-            priority: newPriority
-        }
-        const requestOptions = {
-            method: 'PUT',
-            body: JSON.stringify(newPatientRecord),
-        };
-
-        fetch(ROUTES['GET_EACH_PATIENT'], requestOptions)
-            .then(result => result.json())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
-
     }
     return (
         <div className={styles['patient-card']}>

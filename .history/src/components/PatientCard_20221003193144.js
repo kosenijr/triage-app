@@ -1,34 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from '../styles/PatientCard.module.css'
-import { ROUTES } from '../constants'
 
 const PatientCard = ({ patient, onStartDischarge, onCompleteDischarge, updateRoomAssignment }) => {
-    const [priority, setPriority] = useState(patient.priority);
-    const onPriorityChange = (newPriority) => {
-        setPriority(newPriority);
-        const newPatientRecord = {
-            ...patient,
-            priority: newPriority
-        }
-        const requestOptions = {
-            method: 'PUT',
-            body: JSON.stringify(newPatientRecord),
-        };
-
-        fetch(ROUTES['GET_EACH_PATIENT'], requestOptions)
-            .then(result => result.json())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
-
-    }
+    const [priority, setPriority] = useState([])
     return (
         <div className={styles['patient-card']}>
             <h3>{patient?.name}</h3>
             <div>
                 <h4>Priority</h4>
-                <span className={priority === 1 ? 'font-bold' : ''} onClick={() => onPriorityChange(1)}>1</span>
-                <span className={priority === 2 ? 'font-bold' : ''} onClick={() => onPriorityChange(2)}>2</span>
-                <span className={priority === 3 ? 'font-bold' : ''} onClick={() => onPriorityChange(3)}>3</span>
+                <span>1</span><span>2</span><span>3</span>
             </div>
             <p>Date of Birth: {patient?.dob}</p>
             <h4>Chief Complaint:</h4>
