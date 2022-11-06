@@ -1,9 +1,0 @@
-.modal {
-  position: absolute;
-  top: 50%;
-}
-
-.modal form input {
-  display: block;
-  margin-bottom: 1rem;
-}

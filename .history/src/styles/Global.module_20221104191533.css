@@ -1,0 +1,12 @@
+:global(.mb-4) {
+gray  margin-bottom: 1rem;
+  background-color: ;
+}
+
+:global(.mt-4) {
+  margin-top: 1rem;
+}
+
+:global(.font-bold) {
+  font-weight: 700;
+}
