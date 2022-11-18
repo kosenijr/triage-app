@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     setNumOfPatients(patientRecords.length);
   }, [patientRecords]);
-
+ 
   const onRoomAssignment = (patient, room) => {
     // const oldPatientRecord = patient;
     const newPatientRecord = {
