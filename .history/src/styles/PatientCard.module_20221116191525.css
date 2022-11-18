@@ -1,0 +1,12 @@
+.inner-patient-card {
+  background-color: #ffffff;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-priority {
+  position: absolute;
+  right: 10px;jl
+
+}
