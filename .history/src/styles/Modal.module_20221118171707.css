@@ -17,4 +17,5 @@
 
 .cancel-modal {
   cursor: pointer;
+  display: none;
 }
