@@ -28,7 +28,7 @@ export default function Modal({ onCreatePatient, setIsModalOpen }) {
 
     return (
         <div className={styles['modal']}>
-            <div className={styles['cancel-div']}>
+            <div className={styles =['cancel-div']}>
                 < GrClose className={styles['cancel-modal']} onClick={() => setIsModalOpen(false)} />
             </div>
             <form action="">

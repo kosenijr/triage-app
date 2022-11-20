@@ -30,7 +30,7 @@
   justify-content: space-between;
   align-items: center;
   /* height: 100px; */
-  background-color: #06abeb;
+  background-color: #06ABEB;
   color: white;
   padding: 1rem;
 }
@@ -90,10 +90,8 @@
 
   .left-nav {
     background-color: #dc298d;
-    color: white;
     display: flex;
     flex-direction: column;
-    padding-top: 0.5rem;
     width: 5%;
     align-items: center;
   }

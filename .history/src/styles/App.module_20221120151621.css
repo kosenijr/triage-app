@@ -92,8 +92,7 @@
     background-color: #dc298d;
     color: white;
     display: flex;
-    flex-direction: column;
-    padding-top: 0.5rem;
+    flex-direction: columntop: 5%;
     width: 5%;
     align-items: center;
   }

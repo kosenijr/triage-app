@@ -7,6 +7,7 @@
 
 .left-nav {
   display: none;
+  background-color: #DC298D
 }
 
 .right-content {
@@ -30,7 +31,7 @@
   justify-content: space-between;
   align-items: center;
   /* height: 100px; */
-  background-color: #06abeb;
+  background-color: #3d5afc;
   color: white;
   padding: 1rem;
 }
@@ -42,7 +43,7 @@
 }
 
 .triage-header-button {
-  background-color: #dc298d;
+  background-color: #3d5afc;
   color: white;
   border: none;
   border-radius: 4px;
@@ -89,11 +90,9 @@
   }
 
   .left-nav {
-    background-color: #dc298d;
-    color: white;
+    background-color: lightgray;
     display: flex;
     flex-direction: column;
-    padding-top: 0.5rem;
     width: 5%;
     align-items: center;
   }

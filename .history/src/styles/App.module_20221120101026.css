@@ -90,10 +90,8 @@
 
   .left-nav {
     background-color: #dc298d;
-    color: white;
     display: flex;
     flex-direction: column;
-    padding-top: 0.5rem;
     width: 5%;
     align-items: center;
   }

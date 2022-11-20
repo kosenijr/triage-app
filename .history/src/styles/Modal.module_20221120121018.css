@@ -5,9 +5,8 @@
   transform: translate(-50%, -50%);
 
   background-color: #06abeb;
-  color: white;
+;
   padding: 0.5rem;
-  border: outset;
   border-radius: 0.5rem;
   z-index: 1;
 }
@@ -17,11 +16,6 @@
   margin-bottom: 1rem;
 }
 
-.cancel-div {
-  margin-left: 90%;
-}
-
 .cancel-modal {
   cursor: pointer;
-  background-color: white;
 }

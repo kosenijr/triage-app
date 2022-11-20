@@ -6,8 +6,7 @@ import { ROUTES } from '../src/constants'
 import PatientCard from './components/PatientCard'
 import Modal from './components/Modal'
 
-const log = console.log;
-
+l
 function App() {
 
   const [patientRecords, setPatientRecords] = useState([]);
@@ -25,7 +24,7 @@ function App() {
   useEffect(() => {
     setNumOfPatients(patientRecords.length);
   }, [patientRecords]);
-
+ 
   const onRoomAssignment = (patient, room) => {
     // const oldPatientRecord = patient;
     const newPatientRecord = {

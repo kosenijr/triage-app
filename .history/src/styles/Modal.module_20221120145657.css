@@ -17,11 +17,7 @@
   margin-bottom: 1rem;
 }
 
-.cancel-div {
-  margin-left: 90%;
-}
-
 .cancel-modal {
   cursor: pointer;
   background-color: white;
-}
+  margin-right: 10px;
