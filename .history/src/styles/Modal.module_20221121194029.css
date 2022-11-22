@@ -1,0 +1,33 @@
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #06abeb;
+  color: white;
+  padding: 0.5rem;
+  border: outset;
+  border-radius: 0.5rem;
+  z-index: 1;
+}
+
+.modal form input {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.modal form button {
+  display: block;
+  width: 100%;
+  padding: 0;
+}
+
+.cancel-div {
+  margin-left: 90%;
+}
+
+.cancel-modal {
+  cursor: pointer;
+  background-color: white;
+}
